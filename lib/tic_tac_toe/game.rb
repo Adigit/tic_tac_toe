@@ -40,6 +40,10 @@ module TicTacToe
 	    puts ""
 	    puts solicit_move
 	    x, y = get_move
+	    if board.get_cell(x, y).value != ""
+	    	puts "Already filled, please fill some other block."  
+	    	next
+	    end
 	    board.set_cell(x, y, current_player.color)
 	    if board.game_over
 	      puts game_over_message
